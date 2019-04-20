@@ -1,0 +1,58 @@
+<body class="container">
+  <h1>PROGRAMMING</h1>
+
+    <div class="row">
+
+      <div class="col-md-4">
+        <h4>HTML</h4>
+        <p>HTML stands for Hyper Text Markup Language. It is used to design web pages using markup language. HTML is the combination of Hypertext and Markup language. Hypertext defines the link between the web pages. Markup language is used to define the text document within tag which defines the structure of web pages. This language is used to annotate (make notes for the computer) text so that a machine can understand it and manipulate text accordingly. Most of markup (e.g. HTML) languages are human readable. Language uses tags to define what manipulation has to be done on the text.</p>
+      </div>
+
+      <div class="col-md-4">
+        <h4>CSS</h4>
+        <p>Cascading Style Sheets, fondly referred to as CSS, is a simply designed language intended to simplify the process of making web pages presentable. CSS allows you to apply styles to web pages. More importantly, CSS enables you to do this independent of the HTML that makes up each web page.</p>
+      </div>
+
+      <div class="col-md-4">
+        <h4>Bootstrap</h4>
+        <p>Bootstrap is a free and open-source collection of tools for creating websites and web applications. It is the most popular HTML, CSS, and JavaScript framework for developing responsive, mobile-first web sites. It solves many problems which we had once, one of which is the cross browser compatibility issue. </p>
+      </div>
+
+    </div>
+    <hr>
+    <div class="row">
+      <ul class="list-group col-md-4">
+          <li class="list-group-item"><a href="#html"></a> HTML</li>
+          <li class="list-group-item">CSS</li>
+          <li class="list-group-item">Bootstrap</li>
+      </ul>
+
+      <div class="col-md-4">
+        
+        <div class="form-group row">
+          <label for="name" class="col-sm-2 col-form-label">NAME</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="name" [(ngModel)] = "namefield" >
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="email" class="col-sm-2 col-form-label">EMAIL</label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control" id="email" [(ngModel)] = "emailfield" >
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="submission()">Submit</button>
+           
+      </div>
+
+      <div class="col-md-4">
+
+      </div>
+        <p *ngIf ="values">Name is {{ namefield }} <br> email address is {{ emailfield }} </p>
+    </div>
+  <label>Months</label>
+  <select>
+    <option *ngFor ="let i of months" >{{i}}</option> 
+  </select>
+    
+</body>
