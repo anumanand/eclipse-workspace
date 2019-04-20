@@ -1,0 +1,29 @@
+package selenium;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class seleniumBasics {
+
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        System.setProperty("webdriver.chrome.driver", "/home/anum/selenium/chromedriver_linux64/chromedriver");
+
+       WebDriver driver= new ChromeDriver();
+
+       driver.get("https://get.askidact.com/automated-testing-tool/?gclid=Cj0KCQjw7sDlBRC9ARIsAD-pDFoV-f4F3_j5vaxtFCg8QD9EP8J58ZTRLOXpy0G3XVZ4gOCY17BJRkQaAkFTEALw_wcB/");
+       
+       WebElement firstname = driver.findElement(By.id("firstname-2c5d7748-6e27-4980-902a-170d04892e4a"));
+       firstname.sendKeys("Anum");
+       
+       WebElement lastname = driver.findElement(By.id("lastname-2c5d7748-6e27-4980-902a-170d04892e4a"));
+       lastname.sendKeys("Anand");
+       
+       WebElement businessEmail = driver.findElement(By.id("email-2c5d7748-6e27-4980-902a-170d04892e4a"));
+       businessEmail.sendKeys("anum@yopmail.com");
+
+    }
+
+}

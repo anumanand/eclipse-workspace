@@ -1,0 +1,32 @@
+package selenium;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+import com.sun.tools.javac.util.List;
+
+
+public class amazon {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.chrome.driver", "/home/anum/selenium/chromedriver_linux64/chromedriver");
+
+	       WebDriver driver= new ChromeDriver();
+
+	       driver.get("https://www.amazon.in/");
+	       driver.manage().window().fullscreen();
+	       
+	       WebElement dropDown = driver.findElement(By.xpath("//input[@id='searchDropdownBox']"));
+	       
+	       Select dropDownOption = new Select(dropDown);
+//	       List<WebElement> allOptions = dropDownOption.getOptions();
+
+	       dropDownOption.selectByVisibleText("search-alias=apparel");
+//	       dropdown.selectByIndex(1);
+	}
+
+}

@@ -1,0 +1,42 @@
+package selenium;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+//import com.sun.tools.javac.util.List;
+
+
+public class amazon {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.chrome.driver", "/home/anum/selenium/chromedriver_linux64/chromedriver");
+
+	       WebDriver driver= new ChromeDriver();
+
+	       driver.get("https://www.amazon.in/");
+	       driver.manage().window().fullscreen();
+	       
+	       WebElement dropDown = driver.findElement(By.id("searchDropdownBox"));
+	       
+	       Select dropDownOption = new Select(dropDown);
+//	       List<WebElement> allOptions = dropDownOption.getOptions();
+
+	       dropDownOption.selectByValue("search-alias=apparel");
+//	       dropdown.selectByIndex(1);
+	       
+	       WebElement searchOption = driver.findElement(By.id("twotabsearchtextbox"));
+	       searchOption.sendKeys("women dresses");
+	       
+	       WebElement searchButton = driver.findElement(By.xpath("//input[@value='Go']"));
+	       searchButton.click();
+	       
+	       JavascriptExecutor jse = (JavascriptExecutor) driver;
+	       jse.executeScript("window.scrollBy(0,250)", "");
+	}
+
+}
